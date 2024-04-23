@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Pundit Pitch</title>
+    <link rel="stylesheet" href="/dist/css/index.css">
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container text-center">
+        <div class="m-auto" style="width: 400px;">
+            <div>
+                <img src="/src/svg/pundit-pitch-logo.svg" alt="Pundit Pitch logo">
+            </div>
+           <div>
+                <form class="d-flex flex-column m-auto" style="width: 360px;" action="/profile/index.html" method="get">
+                    <div>
+                        <label for="emailinput" class="form-label" aria-label="Input for e-mail address"></label>
+                        <input type="email" class="form-control bg-white" id="emailinput" required placeholder="E-mail address">
+                    </div>
+                    <div class="mb-2">
+                        <label for="passwordinput" class="form-label" aria-label="Input for your password"></label>
+                        <input type="password" id="passwordinput" class="form-control bg-white" placeholder="Password" required minlength="8">
+                    </div>
+                    <div class="mb-3">
+                        <a href="#" class="text-decoration-underline text-primary">Forgot your password?</a>
+                    </div>
+                    <button type="submit" formaction="/profile/index.html" class="btn btn-primary">Login</button>
+                </form>
+           </div>
+           <div class="mt-4">
+                <p>Don't have an account? <a href="#" class="text-primary text-decoration-underline">Sign up now!</a></p>
+           </div>
+        </div>
+    </div>
+</body>
+</html>
