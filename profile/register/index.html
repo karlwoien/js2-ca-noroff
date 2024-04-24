@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Pundit Pitch</title>
+    <link rel="stylesheet" href="/dist/css/index.css">
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container text-center">
+        <div class="m-auto" style="width: 400px;">
+            <div>
+                <img src="/src/svg/pundit-pitch-logo.svg" alt="Pundit Pitch logo" style="width: 200px;">
+            </div>
+           <div>
+                <h1>Create a new account</h1>
+                <form class="d-flex flex-column m-auto" style="width: 360px;" id="register-form" method="post" action="/auth/register">
+                    <div class="form-group">
+                        <label for="username" class="form-label" aria-label="Input for username"></label>
+                        <input type="text" name="name" class="form-control bg-white" id="username" required pattern="^[\w]+$" title="Name can only use a-Z, 0-9, and _. Example: user_Name123" placeholder="Username">
+                        <div class="form-help">Username can only consist of a-Z, 0-9, and _</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="emailinput" class="form-label" aria-label="Input for e-mail address"></label>
+                        <input type="email" name="email" class="form-control bg-white" id="emailinput" required pattern="^[\w\-.]+@(stud\.)?noroff\.no$" title="Only @noroff.no or @stud.noroff.no domains are allowed to register" placeholder="E-mail address">
+                        <div class="form-help">Only @noroff.no or @stud.noroff.no domains are allowed to register</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="passwordinput" class="form-label" aria-label="Input for your password"></label>
+                        <input type="password" name="password" id="passwordinput" class="form-control bg-white" placeholder="Password" required minlength="8">
+                        <div class="form-help">Password must contain minimum 8 characters</div>
+                    </div>
+                    <button type="submit" formaction="/profile/index.html" class="btn btn-primary mt-3">Register</button>
+                </form>
+           </div>
+           <div class="mt-4">
+                <p>Already have an account? <a href="/index.html" class="text-primary text-decoration-underline">Login here</a></p>
+           </div>
+        </div>
+    </div>
+</body>
+</html>
