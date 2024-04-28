@@ -16,7 +16,7 @@
             </div>
            <div>
                 <h1>Create a new account</h1>
-                <form class="d-flex flex-column m-auto" style="width: 360px;" id="register-form" method="post" action="/auth/register">
+                <form class="d-flex flex-column m-auto" style="width: 360px;" id="register-form">
                     <div class="form-group">
                         <label for="username" class="form-label" aria-label="Input for username"></label>
                         <input type="text" name="name" class="form-control bg-white" id="username" required pattern="^[\w]+$" title="Name can only use a-Z, 0-9, and _. Example: user_Name123" placeholder="Username">
@@ -32,7 +32,7 @@
                         <input type="password" name="password" id="passwordinput" class="form-control bg-white" placeholder="Password" required minlength="8">
                         <div class="form-help">Password must contain minimum 8 characters</div>
                     </div>
-                    <button type="submit" formaction="/profile/index.html" class="btn btn-primary mt-3">Register</button>
+                    <button type="submit" class="btn btn-primary mt-3">Register</button>
                 </form>
            </div>
            <div class="mt-4">
