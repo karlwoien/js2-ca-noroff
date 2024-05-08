@@ -3,6 +3,8 @@ import { setLoginFormListener } from "./handlers/login.mjs";
 import { setPostFormListener } from "./handlers/createPost.mjs";
 import { setEditPostFormListener } from "./handlers/editPost.mjs";
 import { renderProfile } from "./api/profile/render.mjs";
+import { renderPosts } from "./api/posts/render.mjs";
+
 
 export function router () {
     switch (window.location.pathname) {
@@ -17,6 +19,7 @@ export function router () {
         case "/feed":
         case "/feed/index.html":
             setPostFormListener();
+            renderPosts();
             break;
         case "/feed/post/edit":
         case "/feed/post/edit/index.html":

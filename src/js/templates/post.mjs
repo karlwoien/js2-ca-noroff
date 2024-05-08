@@ -22,7 +22,7 @@ export function postTemplate (postData) {
 
     const profileName = document.createElement ("p")
     profileName.classList.add ("card-title", "fw-bold")
-    profileName.innerText = postData.author;
+    profileName.innerText = postData.author.name;
     postHeader.append(profileName)
 
     const createdDate = document.createElement ("p")
