@@ -1,53 +1,74 @@
-// Functionality to template out and render posts and post to site
+// Functionality to template out posts and post to site
 
-//Post template function needs styling updates so it renders better on page.
 export function postTemplate (postData) {
+
+    // Main div element
     const postContainer = document.createElement("article");
     postContainer.classList.add ("row", "border", "rounded", "pt-3", "mb-2", "bg-white");
     
-    const postLink = document.createElement ("a");
-    postLink.href = `/feed/post/index.html?id=${postData.id}`
-    postContainer.append(postLink);
+    // Make the entire postContainer clickable
+    postContainer.style.cursor = "pointer";
+    postContainer.onclick = function() {
+        window.location.href = `/feed/post/index.html?id=${postData.id}`;
+    };
 
-    const postHeader = document.createElement ("div");
-    postHeader.classList.add ("col-auto");
-    postLink.append(postHeader);
+    //Column for avatar/profile image
+    const avatarContainer = document.createElement ("div");
+    avatarContainer.classList.add ("col-auto");
 
-    const postProfileAvatar = document.createElement ("i");
-    postProfileAvatar.classList.add("bi", "bi-person-circle",)
-    postHeader.append(postProfileAvatar)
+    if (postData.author.avatar) {
+        const profileAvatar = document.createElement("img");
+        profileAvatar.classList.add ("profile-image", "rounded-circle", "me-2"),
+        profileAvatar.src = postData.author.avatar;
+        profileAvatar.alt = postData.author.name + "profile avatar";
+        avatarContainer.append(profileAvatar);
+    } else {
+        const noProfileAvatar =document.createElement("div");
+        noProfileAvatar.classList.add("profile-image", "rounded-circle", "me-2")
+        avatarContainer.append(noProfileAvatar);
 
-    const postText= document.createElement("div")
-    postText.classList.add ("col", "text-start")
+        const profileAvatar = document.createElement ("i");
+        profileAvatar.classList.add("bi", "bi-person-circle")
+        noProfileAvatar.append(profileAvatar)
+    }
+    
+    //Column for content
+    const contentContainer= document.createElement("div")
+    contentContainer.classList.add ("col", "text-start")
 
     const profileName = document.createElement ("p")
     profileName.classList.add ("card-title", "fw-bold")
     profileName.innerText = postData.author.name;
-    postHeader.append(profileName)
 
     const createdDate = document.createElement ("p")
     createdDate.classList.add("text-muted");
-    createdDate.innerText = postData.created;
-    postHeader.append(createdDate)
+    const dateObject = new Date (postData.created);
+    const formattedDate = dateObject.toISOString().split("T")[0];
+    createdDate.innerText = formattedDate;
 
     const title = document.createElement ("p");
     title.innerText = postData.title;
-    postText.append(title);
 
     const bodyText = document.createElement ("p");
     bodyText.classList.add("fw-normal")
     bodyText.innerText = postData.body;
-    postText.append(bodyText);
+
+    contentContainer.appendChild(profileName);
+    contentContainer.appendChild(createdDate);
+    contentContainer.appendChild(title);
+    contentContainer.appendChild(bodyText);
 
     if (postData.media) {
     const media = document.createElement ("img")
-    media.classList.add("card-img", "img-fluid", "mt-2")
+    media.classList.add("post-image", "img-fluid", "mt-2", "mb-3")
     media.src = postData.media;
     media.alt = postData.title;
-    postText.append(media);
+    contentContainer.append(media);
     }
     
-    postContainer.append(postText);
+    // Append all to main div
+    postContainer.appendChild(avatarContainer);
+    postContainer.appendChild(contentContainer);
     
     return postContainer;
 };
