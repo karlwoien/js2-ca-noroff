@@ -11,6 +11,21 @@ input:invalid + .form-help {
     display: block;
 };
 
+.profile-image {
+    width: 40px;
+    height: 40px;
+}
+
+.post-image {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.bi-person-circle {
+    font-size: 40px;
+    color: var(--bs-secondary);
+}
+
 // scss-docs-start import-stack
 // Configuration
 @import "../../node_modules/bootstrap/scss/functions";

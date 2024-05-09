@@ -6,7 +6,6 @@ import { load } from "../../storage/storageHandler.mjs";
 
 
 const action = "/profiles";
-const {name} = load ("profile")
 
 /*export async function getProfiles() {
     const getProfilesUrl = apiSocialUrl + action + "/";
@@ -18,6 +17,7 @@ const {name} = load ("profile")
 
 
 export async function getProfile() {
+    const {name} = load ("profile")
     const getProfileUrl = apiSocialUrl + action + "/" + name;
     console.log (getProfileUrl);
 
