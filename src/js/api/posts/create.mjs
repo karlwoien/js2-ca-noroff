@@ -10,11 +10,9 @@ export async function createPost(postData) {
     const createPostUrl = apiSocialUrl + action;
 
     const response = await authFetch(createPostUrl, {
-        method: "post",
+        method,
         body: JSON.stringify(postData)
     })
 
-    const post = await response.json ();
-
-    return post;
+    return await response.json ();
 };

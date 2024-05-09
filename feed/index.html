@@ -53,21 +53,9 @@
             </header>
             <main class="col mt-4">
                 <div class="container">
-                    <nav class="navbar row border rounded pt-3 pb-3 mb-2 bg-white">
-                        <div class="col">
-                            <select class="form-select bg-white" aria-label="Sort posts">
-                                <option selected>Sort posts</option>
-                                <option value="1">For you</option>
-                                <option value="2">Following</option>
-                              </select>
-                        </div>
-                        <form class="col justify-content-end" role="search">
-                            <input class="form-control me-2 bg-white" type="search" placeholder="Search" aria-label="Search">
-                        </form>
-                    </nav>
                     <section class="row border rounded pt-3 pb-2 mb-2 bg-white">
                         <div class="col-auto">
-                            <img src="https://avatars.githubusercontent.com/u/128052254?v=4" alt="profile-picture" class="rounded-circle" width="30">
+                            <img src="https://avatars.githubusercontent.com/u/128052254?v=4" alt="profile-picture" class="rounded-circle profileImage" width="40">
                         </div>
                         <div class="col text-start">
                             <a href="/profile/index.html" class="card-title fw-bold">kawo</a>
@@ -75,83 +63,40 @@
                         </div>
                         <form id="create-post">
                             <div class="form-group">
-                                <label for="title" class="form-label fw-bold" aria-label="Input title of post">Title</label>
-                                <input type="text" name="title" class="form-control bg-white mb-3" id="username" required placeholder="An epic text">
+                                <label for="title" class="form-label visually-hidden" aria-label="Input title of post"></label>
+                                <input type="text" name="title" class="form-control border-0 bg-white mb-3" id="title" required placeholder="Epic title goes here">
                             </div>
                             <div class="form-group">
-                                <label for="body" class="form-label fw-bold" aria-label="Textarea for body text">Body</label>
-                                <textarea name="body" class="form-control bg-white mb-3" id="body" required placeholder="Once upon a time there was a lot of text out in the world.." ></textarea>
+                                <label for="body" class="form-label visually-hidden" aria-label="Textarea for body text">Body</label>
+                                <textarea name="body" class="form-control border-0 bg-white mb-3" id="body" required placeholder="What's on your mind?"></textarea>
                             </div>
-                            <div class="form-group">
-                                <label for="media" class="form-label fw-bold" aria-label="Input media url">Keywords</label>
-                                <input type="url" name="media" class="form-control bg-white mb-3" id="media" placeholder="Text, Font, Words..">
-                            </div>
-                            <div class="form-group">
-                                <label for="media" class="form-label fw-bold" aria-label="Input media url">Media url</label>
-                                <input type="url" name="media" class="form-control bg-white" id="media" placeholder="http://">
-                            </div>
-                            <div class="d-flex justify-content-end mb-2">
-                                <button type="submit" class="btn btn-primary mt-3 flex-end">Post</button>
+                            <div class="form-group d-flex gap-3 mb-3">
+                                <div style="width: 100%;">
+                                    <label for="media" class="form-label visually-hidden" aria-label="Input media url">Media URL</label>
+                                    <input type="url" name="media" class="form-control bg-white" id="media" placeholder="Media Url">
+                                </div>
+                                <div>
+                                    <button type="submit" class="btn btn-primary flex-end">Post</button>
+                                </div>
                             </div>
                         </form>
                     </section>
+                    <nav class="navbar row border rounded pt-3 pb-3 mb-2 bg-white">
+                        <div class="col">
+                            <select class="form-select bg-white" aria-label="Sort posts">
+                                <option selected>Sort posts</option>
+                                <option value="1">With media</option>
+                                <option value="2">No media</option>
+                              </select>
+                        </div>
+                        <form class="col justify-content-end" role="search">
+                            <input class="form-control me-2 bg-white" type="search" placeholder="Search" aria-label="Search">
+                        </form>
+                    </nav>
                     <section>
                         <div id="#feed">
 
                         </div>
-                        <!--<article class="row border rounded pt-3 mb-2 bg-white">
-                            <div class="col-auto">
-                                <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?q=80&w=3072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="profile-picture" class="rounded-circle" width="30" height="30">
-                            </div>
-                            <div class="col text-start">
-                                <a href="#" class="card-title fw-bold">Mr. Football</a>
-                                <p class="text-muted"> 18 mar 2024</p>
-                                <p>The new Norwegian national team jersey looks like a pepsi commercial.. Reckon Pepsi will sell a s* ton of cans when Haaland gets pictured in it. 🚀</p>
-                            </div>
-                        </article>
-                        <article class="row border rounded pt-3 mb-2 bg-white">
-                            <div class="col-auto">
-                                <img src="https://pbs.twimg.com/profile_images/1742837199005954048/YGI6Kw7P_400x400.jpg" alt="profile-picture" class="rounded-circle" width="30">
-                            </div>
-                            <div class="col text-start">
-                                <a href="#" class="card-title fw-bold">LeaguePremier</a>
-                                <p class="text-muted"> 18 mar 2024</p>
-                                <p>The run in for the end of the season is here 😯😯</p>
-                                <p>Who will go out on top?!</p>
-                            </div>
-                        </article>
-                        <article class="row border rounded pt-3 mb-2 bg-white">
-                            <div class="col-auto">
-                                <img src="https://images.unsplash.com/photo-1695637453055-e5c5aeea514a?q=80&w=3348&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="profile-picture" class="rounded-circle" width="30" height="30">
-                            </div>
-                            <div class="col text-start">
-                                <a href="#" class="card-title fw-bold">FPL Monster</a>
-                                <p class="text-muted"> 18 mar 2024</p>
-                                <p>Looking at the stats before Liverpool - Man City kicks off, Salah has scored 11 goals in his 19 appearances against City. Surely you got to have him in your team? </p>
-                            </div>
-                        </article>
-                        <article class="row border rounded pt-3 mb-2 bg-white">
-                            <div class="col-auto">
-                                <img src="https://images.unsplash.com/photo-1582055624872-adf3f81ebc7f?q=80&w=3024&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="profile-picture" class="rounded-circle" width="30">
-                            </div>
-                            <div class="col text-start">
-                                <a href="#" class="card-title fw-bold">Fabrizio Transfero</a>
-                                <p class="text-muted"> 18 mar 2024</p>
-                                <p>🚨🚨 Breaking! Messi on the verge of signing for Barca once again according to Marca!</p> 
-                                <p>The 36 years old may very well return to europeen football. If true this would be absolutely shocking transfer, but a joy for all football fans.</p>
-                            </div>
-                        </article>
-                        <article class="row border rounded pt-3 mb-2 bg-white">
-                            <div class="col-auto">
-                                <img src="https://images.unsplash.com/photo-1551958219-acbc608c6377?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="profile-picture" class="rounded-circle" width="30" height="30">
-                            </div>
-                            <div class="col text-start">
-                                <a href="#" class="card-title fw-bold">FootballSky</a>
-                                <p class="text-muted"> 18 mar 2024</p>
-                                <p>"Even for the Championship this is extraordinary!" 🤯</p>
-                                <p>Cardiff have won it at the last second! WOW! </p>
-                            </div>
-                        </article>-->
                     </section>
                 </div>
             </main>
