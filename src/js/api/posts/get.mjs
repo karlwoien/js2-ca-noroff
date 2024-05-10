@@ -4,16 +4,16 @@
 import { authFetch } from "../authFetch.mjs";
 import { apiSocialUrl } from "../constants.mjs";
 
-const action = "/posts?_author=true";
+const action = "/posts";
+const author = "?_author=true"
 
 export async function getPosts() {
-    const getPostsUrl = apiSocialUrl + action;
+    const getPostsUrl = apiSocialUrl + action + author;
 
     try {
         const response = await authFetch(getPostsUrl);
         if (response.ok) {
             const posts = await response.json();
-            console.log(posts);
             return posts;
         }
         throw new Error('Failed to load posts');
@@ -25,7 +25,7 @@ export async function getPosts() {
 
 
 export async function getPost(id) {
-    const getPostUrl = apiSocialUrl + action + "/" + id;
+    const getPostUrl = apiSocialUrl + action + "/" + id + "/" + author;
 
     const response = await authFetch(getPostUrl)
 
