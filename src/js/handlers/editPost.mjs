@@ -15,7 +15,6 @@ export async function setEditPostFormListener () {
 
         form.title.value = post.title;
         form.body.value = post.body;
-        form.tags.value = post.tags;
         form.media.value = post.media;
 
         button.disabled = false;
@@ -27,7 +26,9 @@ export async function setEditPostFormListener () {
             const post = Object.fromEntries(formData.entries());
             post.id = id;
     
-            updatePost(post);
+            updatePost(post).then((response) => {
+                location.reload();
+                });
         });
     };    
 };

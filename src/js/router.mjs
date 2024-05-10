@@ -26,6 +26,7 @@ export function router () {
         case "/feed/post":
         case "/feed/post/index.html":
             renderPost();
+            setEditPostFormListener();
             break;
         case "/feed/post/edit":
         case "/feed/post/edit/index.html":
