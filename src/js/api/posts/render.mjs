@@ -12,7 +12,7 @@ export async function renderPosts () {
 
 const posts = await getPosts();
 
-const container = document.getElementById("#feed");
+const container = document.getElementById("feed");
 
 renderPostsTemplate(posts, container);
 };
