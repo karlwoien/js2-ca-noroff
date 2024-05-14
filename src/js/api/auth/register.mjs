@@ -15,7 +15,8 @@ export async function register (profile) {
         body
     });
     const result = await response.json();
-    alert ("Registration complete!")
+    alert ("Registration complete! You can now login.")
+    window.location.href = "/index.html"
     return result;
 };
 
