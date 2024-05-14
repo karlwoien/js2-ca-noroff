@@ -7,6 +7,7 @@ import { renderPost, renderPosts } from "./api/posts/render.mjs";
 import { renderProfileFeed } from "./ui/profileFeed.mjs";
 import {setDeletePostListener} from "../js/handlers/deletePost.mjs"
 import { filterPosts } from "./handlers/filterPosts.mjs";
+import { setSearchPostListener } from "./handlers/searchPosts.mjs";
 
 
 export function router () {
@@ -25,6 +26,7 @@ export function router () {
             renderPosts();
             renderProfileFeed();
             filterPosts();
+            setSearchPostListener()
             break;
         case "/feed/post":
         case "/feed/post/index.html":
