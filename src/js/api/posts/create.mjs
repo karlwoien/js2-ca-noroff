@@ -13,6 +13,8 @@ export async function createPost(postData) {
         method,
         body: JSON.stringify(postData)
     })
-
+    
+    location.reload();
     return await response.json ();
+    
 };

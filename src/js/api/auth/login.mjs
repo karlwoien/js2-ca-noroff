@@ -18,9 +18,13 @@ export async function login (profile) {
 
     const result = await response.json();
 
-    storage.save("token", result.accessToken);
-
-    storage.save("profile", result)
-
-    alert ("You are now logged in!")
+    // Check if login is successful and redirect if it is, else alert login failed.
+    if (response.ok) {
+        storage.save("token", result.accessToken);
+        storage.save("profile", result)
+        alert ("Login successful!");
+        window.location.href = "/feed/index.html";
+    } else {
+        alert ("Login failed: Please enter correct username and password.")
+    }
 };
