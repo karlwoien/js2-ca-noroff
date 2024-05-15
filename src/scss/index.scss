@@ -7,6 +7,14 @@
     margin-left: 0.25rem
 };
 
+.form-help-avatar{
+    display: block;
+    font-size: 0.75rem;
+    text-align: start;
+    margin-top: 0.25rem;
+    margin-left: 0.25rem
+};
+
 input:invalid + .form-help {
     display: block;
 };
