@@ -1,6 +1,5 @@
 // Functionality to template out and render profile on profile page
 
-//profile template function needs styling updates so it renders better on page.
 export function profileTemplate (profileData) {
 
     // main div element
@@ -11,10 +10,21 @@ export function profileTemplate (profileData) {
     const avatarContainer = document.createElement("div")
     avatarContainer.classList.add("col-auto")
 
-    const profileIcon = document.createElement ("i");
-    profileIcon.classList.add("bi", "bi-person-circle", "fs-2")
-    
-    avatarContainer.appendChild(profileIcon);
+    if (profileData.avatar) {
+        const profileAvatar = document.createElement("img");
+        profileAvatar.classList.add ("profile-image", "rounded-circle", "me-2"),
+        profileAvatar.src = profileData.avatar;
+        profileAvatar.alt = profileData.name + "profile avatar";
+        avatarContainer.append(profileAvatar);
+    } else {
+        const noProfileAvatar =document.createElement("div");
+        noProfileAvatar.classList.add("profile-image", "rounded-circle", "me-2")
+        avatarContainer.append(noProfileAvatar);
+
+        const profileAvatar = document.createElement ("i");
+        profileAvatar.classList.add("bi", "bi-person-circle")
+        noProfileAvatar.append(profileAvatar)
+    }
 
     //column for text
     const textContainer = document.createElement("div")
