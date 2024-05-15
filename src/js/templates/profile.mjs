@@ -70,16 +70,17 @@ export function profileTemplate (profileData) {
     const form = document.createElement("form");
     form.classList.add("d-flex", "justify-content-end", "gap-2")
 
-    const followButton = document.createElement("button");
-    followButton.classList.add("btn", "btn-primary");
-    followButton.textContent = "Follow";
-
     const editButton = document.createElement("button");
-    editButton.classList.add("btn", "btn-secondary")
+    editButton.classList.add("btn", "btn-primary")
     editButton.textContent = "Edit profile";
 
-    form.appendChild(followButton);
+    const logoutButton = document.createElement("button");
+    logoutButton.classList.add("btn", "btn-danger");
+    logoutButton.textContent = "Logout";
+    logoutButton.id = "logoutButton"
+
     form.appendChild(editButton);
+    form.appendChild(logoutButton);
 
     nav.appendChild(navLinks);
     nav.appendChild(form);
