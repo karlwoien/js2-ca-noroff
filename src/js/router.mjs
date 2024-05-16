@@ -5,9 +5,10 @@ import { setEditPostFormListener } from "./handlers/editPost.mjs";
 import { renderProfile } from "./api/profile/render.mjs";
 import { renderPost, renderPosts } from "./api/posts/render.mjs";
 import { renderProfileFeed } from "./ui/profileFeed.mjs";
-import {setDeletePostListener} from "../js/handlers/deletePost.mjs"
+import { setDeletePostListener } from "../js/handlers/deletePost.mjs"
 import { filterPosts } from "./handlers/filterPosts.mjs";
 import { setSearchPostListener } from "./handlers/searchPosts.mjs";
+import { setEditProfileFormListener } from "./handlers/editProfile.mjs"
 
 
 export function router () {
@@ -41,6 +42,10 @@ export function router () {
         case "/profile":
         case "/profile/index.html":
             renderProfile();
+            break;
+        case "/profile/edit":
+        case "/profile/edit/index.html":
+            setEditProfileFormListener();
             break;
         default:
             console.log("404 - Not found");
