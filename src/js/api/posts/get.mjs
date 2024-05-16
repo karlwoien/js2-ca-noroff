@@ -16,9 +16,9 @@ export async function getPosts() {
             const posts = await response.json();
             return posts;
         }
-        throw new Error('Failed to load posts');
+        throw new Error("Failed to load posts");
     } catch (error) {
-        console.error('Error fetching posts:', error);
+        console.error("Error fetching posts:" + error);
         return [];
     }
 }
@@ -27,7 +27,12 @@ export async function getPosts() {
 export async function getPost(id) {
     const getPostUrl = apiSocialUrl + action + "/" + id + "/" + author;
 
-    const response = await authFetch(getPostUrl)
-
-    return await response.json ();
+    if (!id) {
+        throw new Error ("Get post requires a post ID")
+    } try {
+        const response = await authFetch(getPostUrl)
+        return await response.json ();
+    } catch (error) {
+        throw new Error (error)
+    }
 };

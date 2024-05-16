@@ -9,6 +9,10 @@ const method = "put";
 export async function updateProfile(profileData) {
     const updateProfileUrl = apiSocialUrl + action + "/" + profileData.name + "/media";
 
+    if (!profileData || !profileData.name) {
+        throw new Error("Profile data or name is not defined");
+    }
+    
     const response = await authFetch(updateProfileUrl, {
         method,
         body: JSON.stringify(profileData)

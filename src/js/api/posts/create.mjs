@@ -9,12 +9,22 @@ const method = "post";
 export async function createPost(postData) {
     const createPostUrl = apiSocialUrl + action;
 
-    const response = await authFetch(createPostUrl, {
-        method,
-        body: JSON.stringify(postData)
-    })
+    try {
+        const response = await authFetch(createPostUrl, {
+            method,
+            body: JSON.stringify(postData)
+        });
+        if (response.ok) {
+            location.reload();
+            return await response.json ();
+        } else {
+            throw new Error ("Response not ok");
+        }
+    } catch (error) {
+        throw new Error (error);
+    }
     
-    location.reload();
-    return await response.json ();
+    
+    
     
 };

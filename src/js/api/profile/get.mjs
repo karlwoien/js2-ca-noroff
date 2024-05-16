@@ -18,11 +18,14 @@ const action = "/profiles";
 
 export async function getProfile() {
     const {name} = load ("profile")
+
+    if (!name) {
+        throw new Error ("Function requires name")
+    }
+
     const getProfileUrl = apiSocialUrl + action + "/" + name;
-    console.log (getProfileUrl);
-
+    
     const response = await authFetch(getProfileUrl)
-
     return await response.json ();
 };
 

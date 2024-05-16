@@ -10,6 +10,9 @@ const author = "?_author=true"
 
 export async function getProfilePosts () {
     const {name} = load ("profile")
+    if (!name) {
+        throw new Error("Profile name is not defined");
+    }
     const getPostsUrl = apiSocialUrl + action + "/" + name + end + author;
     const response = await authFetch(getPostsUrl);
 
