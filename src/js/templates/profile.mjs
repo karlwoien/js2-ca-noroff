@@ -72,7 +72,11 @@ export function profileTemplate (profileData) {
 
     const editButton = document.createElement("button");
     editButton.classList.add("btn", "btn-primary")
-    editButton.textContent = "Edit profile";
+    editButton.textContent = "Update profile";
+    editButton.addEventListener("click", function(event) {
+        event.preventDefault();
+        window.location.href = "/profile/edit/index.html";
+    });
 
     const logoutButton = document.createElement("button");
     logoutButton.classList.add("btn", "btn-danger");

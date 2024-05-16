@@ -34,6 +34,12 @@ input:invalid + .form-help {
     color: var(--bs-secondary);
 }
 
+.form-control:disabled {
+    cursor: not-allowed;
+    border: none;
+}
+
+
 // scss-docs-start import-stack
 // Configuration
 @import "../../node_modules/bootstrap/scss/functions";
