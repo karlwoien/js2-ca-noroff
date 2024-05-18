@@ -1,0 +1,52 @@
+// Custom CSS
+.form-help {
+    display: none;
+    font-size: 0.75rem;
+    text-align: start;
+    margin-top: 0.25rem;
+    margin-left: 0.25rem
+};
+
+.form-help-avatar{
+    display: block;
+    font-size: 0.75rem;
+    text-align: start;
+    margin-top: 0.25rem;
+    margin-left: 0.25rem
+};
+
+input:invalid + .form-help {
+    display: block;
+};
+
+.profile-image {
+    width: 40px;
+    height: 40px;
+}
+
+.post-image {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.bi-person-circle {
+    font-size: 40px;
+    color: var(--bs-secondary);
+}
+
+.form-control:disabled {
+    cursor: not-allowed;
+    border: none;
+}
+
+
+// scss-docs-start import-stack
+// Configuration
+@import "../../node_modules/bootstrap/scss/functions";
+@import "variables";
+@import "variables-dark";
+@import "../../node_modules/bootstrap/scss/maps";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/utilities";
+
+@import "../../node_modules/bootstrap/scss/bootstrap"

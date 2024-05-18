@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feed | Pundit Pitch</title>
+    <link rel="stylesheet" href="/dist/css/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer type="module" src="/src/js/index.mjs"></script>
+</head>
+<body class="mt-4">
+    <div class="container">
+        <div class="row flex-column flex-md-row">
+            <header class="col-12 col-sm-12 col-lg-2 me-3">
+                <nav class="flex-column flex-md-row">
+                    <div class="mb-2 text-center text-lg-start">
+                        <a href="/feed/index.html"> <img src="/src/svg/pundit-pitch-logo.svg" alt="Pundit Pitch Logo" width="100"></a>
+                    </div>
+                    <ul class="nav flex-lg-column gap-lg-5 justify-content-between justify-content-lg-start fs-5">
+                        <li class="nav-item">
+                            <a href="/feed/index.html" class="d-flex gap-2 nav-link active" aria-current="page">
+                                <i class="bi bi-house"></i>
+                                <span class="d-none d-lg-block">Feed</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="d-flex gap-2 nav-link">
+                                <i class="bi bi-chat-left-text"></i>
+                                <span class="d-none d-lg-block">Messages</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="d-flex gap-2 nav-link">
+                                <i class="bi bi-bell"></i>
+                                <span class="d-none d-lg-block">Notifications</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="d-flex gap-2 nav-link">
+                                <i class="bi bi-people"></i>
+                                <span class="d-none d-lg-block">Community</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/profile/index.html" class="d-flex gap-2 nav-link">
+                                <i class="bi bi-person-circle fs-5"></i>
+                                <span class="d-none d-lg-block">Profile</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+            <main class="col mt-4">
+                <div class="container">
+                    <section class="row border rounded pt-3 pb-2 mb-2 bg-white">
+                        <div id="#header-feed">
+
+                        </div>
+                        <form id="create-post">
+                            <div class="form-group">
+                                <label for="title" class="form-label visually-hidden" aria-label="Input title of post"></label>
+                                <input type="text" name="title" class="form-control border-0 bg-white mb-3" id="title" required placeholder="Epic title goes here">
+                            </div>
+                            <div class="form-group">
+                                <label for="body" class="form-label visually-hidden" aria-label="Textarea for body text">Body</label>
+                                <textarea name="body" class="form-control border-0 bg-white mb-3" id="body" required placeholder="What's on your mind?"></textarea>
+                            </div>
+                            <div class="form-group d-flex gap-3 mb-3">
+                                <div style="width: 100%;">
+                                    <label for="media" class="form-label visually-hidden" aria-label="Input media url">Media URL</label>
+                                    <input type="url" name="media" class="form-control bg-white" id="media" placeholder="Media Url">
+                                </div>
+                                <div>
+                                    <button type="submit" class="btn btn-primary flex-end">Post</button>
+                                </div>
+                            </div>
+                        </form>
+                    </section>
+                    <nav class="navbar row border rounded pt-3 pb-3 mb-2 bg-white">
+                        <div class="col">
+                            <select class="form-select bg-white" aria-label="Sort posts" name="filter" id="filter">
+                                <option selected>Sort posts</option>
+                                <option value="media">With media</option>
+                                <option value="noMedia">No media</option>
+                            </select>
+                        </div>
+                        <form class="col justify-content-end" role="search">
+                            <input class="form-control me-2 bg-white" type="search" placeholder="Search" aria-label="Search" name="searchInput" id="searchInput">
+                        </form>
+                    </nav>
+                    <section>
+                        <div id="feed">
+                        <!--JS generated content-->
+                        </div>
+                    </section>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
