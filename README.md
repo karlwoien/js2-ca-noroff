@@ -8,7 +8,7 @@ This is a Course Assignment for JavaScript 2 at Noroff - School of Technology an
 
 The goal of the project is to apply knowledge of JavaScript techniques and implement the front-end functionality for a social media application.
 
-My task board for the project can be found [here] (https://trello.com/b/7HuaWuhX/js-2-ca-noroff)
+My task board for the project can be found [here](https://trello.com/b/7HuaWuhX/js-2-ca-noroff)
 
 ## Features
 - User with @noroff.no or @stud.noroff.no email can register profile
@@ -27,7 +27,7 @@ My task board for the project can be found [here] (https://trello.com/b/7HuaWuhX
 - [HTML5](https://developer.mozilla.org/en-US/docs/Glossary/HTML5)
 - [Bootstrap](https://getbootstrap.com/)
 - [Sass](https://sass-lang.com/)
-- [JavaScript] (https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
 ## Getting started
 
