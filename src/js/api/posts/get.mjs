@@ -18,8 +18,7 @@ export async function getPosts() {
         }
         throw new Error("Failed to load posts");
     } catch (error) {
-        console.error("Error fetching posts:" + error);
-        return [];
+        throw new Error (error);
     }
 }
 
@@ -33,6 +32,6 @@ export async function getPost(id) {
         const response = await authFetch(getPostUrl)
         return await response.json ();
     } catch (error) {
-        throw new Error (error)
-    }
+        throw new Error (error);
+    };
 };
