@@ -1,4 +1,29 @@
-// Functionality to template out and render profile on profile page
+/**
+ * Creates a profile template and renders it on the profile page.
+ * 
+ * This function takes profile data as a parameter and constructs a DOM structure representing
+ * the user's profile, including their avatar, name, email, navigation links, and buttons for
+ * editing the profile and logging out.
+ * 
+ * @param {Object} profileData The data of the profile to be rendered.
+ * @param {string} profileData.name The name of the user.
+ * @param {string} profileData.email The email of the user.
+ * @param {string} [profileData.avatar] The URL of the user's avatar image (optional).
+ * @returns {HTMLElement} The DOM element containing the profile template.
+ * @example
+ * ```js
+ * // Profile data
+ * const profileData = {
+ *   name: "John Doe",
+ *   email: "john.doe@example.com",
+ *   avatar: "https://example.com/avatar.jpg"
+ * };
+ * 
+ * // Render profile template
+ * const profileElement = profileTemplate(profileData);
+ * document.body.appendChild(profileElement);
+ * ```
+ */
 
 export function profileTemplate (profileData) {
 
