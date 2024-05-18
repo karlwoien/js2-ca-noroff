@@ -1,10 +1,6 @@
-/*import { getPost } from "../api/posts/get.mjs";
-import { updatePost } from "../api/posts/update.mjs"*/
 import { load } from "../storage/storageHandler.mjs";
-
 import { getProfile } from "../api/profile/get.mjs";
 import { updateProfile } from "../api/profile/update.mjs";
-
 
 // Function to set up the edit post form with event listeners
 export async function setEditProfileFormListener () {

@@ -3,7 +3,6 @@
 import { getPosts} from "../api/posts/get.mjs";
 import { renderPostsTemplate } from "../templates/post.mjs";
 
-
 export async function filterPosts () {
 
     const filterForm = document.querySelector("#filter")

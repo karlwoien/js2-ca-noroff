@@ -42,7 +42,6 @@ export function profileFeedTemplate (profileData) {
     textContainer.appendChild(profileName);
     textContainer.appendChild(creationDate);
 
-
     //Append all elements to the main div
     profileContainer.appendChild(avatarContainer);
     profileContainer.appendChild(textContainer);

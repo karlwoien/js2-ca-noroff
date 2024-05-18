@@ -4,8 +4,6 @@ import { getPost } from "./get.mjs";
 import {renderPostsTemplate} from "../../templates/post.mjs"
 import { renderPostTemplate } from "../../templates/post.mjs";
 
-
-
 // Function to render posts to feed page. 
 
 export async function renderPosts () {
